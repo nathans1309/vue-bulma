@@ -12,12 +12,11 @@
       </label>
     </p>
   </div>
-  {{picked}}
 </template>
 
 <script>
   export default {
-    name: 'vue-switch',
+    name: 'SwitchButtons',
     props: { name: {required:true} },
     data() {
       return {

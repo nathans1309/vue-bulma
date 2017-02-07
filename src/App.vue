@@ -8,18 +8,34 @@
     <button @click="showModal">show modal</button>
 
     
+    <tabs>
+      <tab name="contact" :selected="true">
+        <h1>Contact Information</h1>
+      </tab>
+      <tab name="about">
+        <h1>About Information</h1>
+      </tab>
+      <tab name="Detail">
+        <h1>Detail Information</h1>
+      </tab>
+    </tabs>    
+
   </div>
 </template>
 
 <script>
 import SwitchButtons from './components/SwitchButtons';
 import Modal from './components/Modal';
+import Tabs from './components/Tabs';
+import Tab from './components/Tab';
 
 export default {
   name: 'app',
   components: {
     SwitchButtons,
-    Modal
+    Modal,
+    Tabs, 
+    Tab
   },
   data() {
     return {

@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <switch-buttons name="myswitch"></switch-buttons>
+    <switch-buttons name="myswitch">
+      <switch-button :value="1" :selected="true">Button 1</switch-button>
+      <switch-button :value="2" >Button 2</switch-button>
+      <switch-button :value="3" >Button 3</switch-button>
+    </switch-buttons>
 
-    <modal v-if="isActive" @close="closeModal">
+    <modal v-if="activeModal" @close="closeModal">
       <h1>Here is my modal</h1>
     </modal>
     <button @click="showModal">show modal</button>
@@ -28,26 +32,28 @@ import SwitchButtons from './components/SwitchButtons';
 import Modal from './components/Modal';
 import Tabs from './components/Tabs';
 import Tab from './components/Tab';
+import SwitchButton from './components/SwitchButton';
 
 export default {
   name: 'app',
   components: {
     SwitchButtons,
+    SwitchButton,
     Modal,
     Tabs, 
     Tab
   },
   data() {
     return {
-      isActive:false
+      activeModal:false
     }
   },
   methods: {
     showModal() {
-      this.isActive = true;
+      this.activeModal = true;
     },
     closeModal() {
-      this.isActive = false;
+      this.activeModal = false;
     }
   }
 }

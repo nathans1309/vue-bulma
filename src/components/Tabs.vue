@@ -2,8 +2,8 @@
 	<div>
 		<div class="tabs is-centered is-boxed">
 			<ul>
-				<li  v-for="tab in tabs">
-					<a href="#">
+				<li  v-for="tab in tabs" :class="{'is-active': tab.isActive}">
+					<a :href="tab.href" @click="selectTab(tab)">
 						<span>{{tab.name}}</span>
 					</a>
 				</li>
@@ -20,15 +20,23 @@
 <style></style>
 
 <script>
-import Tab from './Tab';
 	export default {
 		data() {
 			return {
 				tabs:[]
 			}
 		},
+
 		created() {
 			this.tabs = this.$children;
+		},
+
+		methods: {
+			selectTab(selectedTab) {
+				this.tabs.forEach(tab => {
+					tab.isActive = (tab.name == selectedTab.name)
+				});
+			}
 		}
 	}
 </script>

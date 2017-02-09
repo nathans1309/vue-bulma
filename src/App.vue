@@ -27,6 +27,8 @@
     <progress-bar maxValue="50"></progress-bar>
 <hr>
 
+  <data-table></data-table>
+
   </div>
 </template>
 
@@ -37,6 +39,7 @@ import Tabs from './components/Tabs';
 import Tab from './components/Tab';
 import SwitchButton from './components/SwitchButton';
 import ProgressBar from './components/ProgressBar';
+import DataTable from './components/DataTable';
 
 export default {
   name: 'app',
@@ -46,7 +49,8 @@ export default {
     Modal,
     Tabs, 
     Tab,
-    ProgressBar
+    ProgressBar,
+    DataTable
   },
   data() {
     return {

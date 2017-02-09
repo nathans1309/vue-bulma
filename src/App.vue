@@ -5,13 +5,13 @@
       <switch-button :value="2" >Button 2</switch-button>
       <switch-button :value="3" >Button 3</switch-button>
     </switch-buttons>
-
+<hr>
     <modal v-if="activeModal" @close="closeModal">
       <h1>Here is my modal</h1>
     </modal>
     <button @click="showModal">show modal</button>
 
-    
+    <hr>
     <tabs>
       <tab name="contact" :selected="true">
         <h1>Contact Information</h1>
@@ -23,6 +23,9 @@
         <h1>Detail Information</h1>
       </tab>
     </tabs>    
+<hr>
+    <progress-bar maxValue="50"></progress-bar>
+<hr>
 
   </div>
 </template>
@@ -33,6 +36,7 @@ import Modal from './components/Modal';
 import Tabs from './components/Tabs';
 import Tab from './components/Tab';
 import SwitchButton from './components/SwitchButton';
+import ProgressBar from './components/ProgressBar';
 
 export default {
   name: 'app',
@@ -41,7 +45,8 @@ export default {
     SwitchButton,
     Modal,
     Tabs, 
-    Tab
+    Tab,
+    ProgressBar
   },
   data() {
     return {
